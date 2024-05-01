@@ -47,7 +47,7 @@ class WelcomeController extends Controller
     }
     public function index(){
         $s3Client = new S3Client([
-            'region' => 'us-west-1',
+            'region' => 'us-east-1',
             'version' => '2006-03-01'
         ]);
 
