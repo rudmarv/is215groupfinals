@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('s3upload') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ url("/s3upload") }}" enctype="multipart/form-data">
         @csrf
 
         
