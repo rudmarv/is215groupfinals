@@ -25,30 +25,35 @@ class S3uploadController extends Controller
 
     public function store(Request $request)
     {
-    $s3Client = new S3Client([
-        'region' => 'us-east-1',
-        'version' => '2006-03-01'
-    ]);
+    // $s3Client = new S3Client([
+    //     'region' => 'us-east-1',
+    //     'version' => '2006-03-01'
+    // ]);
         
     
     if ($request->hasFile('file')) {
     $file = $request->file('file');
     $fileName = time() . $file->getClientOriginalName();
-    try {
-        $s3Client->putObject([
-            'Bucket' => 'is215finals',
-            'Key' => $fileName,
-            'SourceFile' => $file
-        ]);
-        echo "Uploaded $fileName to $this->bucketName.\n";
-    } catch (Exception $exception) {
-        echo "Failed to upload $fileName with error: " . $exception->getMessage();
-        exit("Please fix error with file upload before continuing.");
-    }
-    }
+    echo $file;
     
+    echo "<br>"
+    echo $fileName;
+    // try {
+    //     $s3Client->putObject([
+    //         'Bucket' => 'is215finals',
+    //         'Key' => $fileName,
+    //         'SourceFile' => $file
+    //     ]);
+    //     echo "Uploaded $fileName to $this->bucketName.\n";
+    // } catch (Exception $exception) {
+    //     echo "Failed to upload $fileName with error: " . $exception->getMessage();
+    //     exit("Please fix error with file upload before continuing.");
+    // }
+    echo "loob";
+    }
+    else {
     echo "dulo";
-
+    }
  
 
 
