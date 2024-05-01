@@ -31,7 +31,7 @@ class S3uploadController extends Controller
         ]);
 
         $result = $s3->putObject([
-            'Bucket' => env('AWS_BUCKET'),
+            'Bucket' => 'is215finals',
             'Key'    => 'images/' . $file->getClientOriginalName(),
             'Body'   => fopen($file, 'r'),
             'ACL'    => 'public-read',
