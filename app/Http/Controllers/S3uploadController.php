@@ -24,7 +24,7 @@ class S3uploadController extends Controller
     }
 
     public function store(Request $request){
-        $file = $request->file('image');
+        $file = $request->file('file');
         dd($file);
         // $s3 = new S3Client([
         //     'version' => 'latest',
