@@ -47,7 +47,7 @@ class S3uploadController extends Controller
     }
     }
     
-    return back()->withSuccess('Image uploaded successfully');
+    echo "dulo";
 
  
 
