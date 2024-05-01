@@ -26,21 +26,21 @@ class S3uploadController extends Controller
     public function store(Request $request){
         $file = $request->file('file');
         dd($file);
-        // $s3 = new S3Client([
-        //     'version' => 'latest',
-        //     'region'  => 'us-east-1',
-        // ]);
+        $s3 = new S3Client([
+            'version' => 'latest',
+            'region'  => 'us-east-1',
+        ]);
 
-        // $result = $s3->putObject([
-        //     'Bucket' => env('AWS_BUCKET'),
-        //     'Key'    => 'images/' . $file->getClientOriginalName(),
-        //     'Body'   => fopen($file, 'r'),
-        //     'ACL'    => 'public-read',
-        // ]);
+        $result = $s3->putObject([
+            'Bucket' => env('AWS_BUCKET'),
+            'Key'    => 'images/' . $file->getClientOriginalName(),
+            'Body'   => fopen($file, 'r'),
+            'ACL'    => 'public-read',
+        ]);
 
-        // // Get the URL of the uploaded image
-        // $url = $result['ObjectURL'];
-        // echo $url;
+        // Get the URL of the uploaded image
+        $url = $result['ObjectURL'];
+        echo $url;
 
     }
     // public function store(Request $request)
