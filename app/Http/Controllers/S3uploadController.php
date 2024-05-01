@@ -26,8 +26,8 @@ class S3uploadController extends Controller
     public function store(Request $request){
         $file = $request->file('file');
         $s3 = new S3Client([
-            'version' => 'latest',
-            'region'  => 'us-east-1',
+            'region' => 'us-east-1',
+            'version' => '2006-03-01'
         ]);
 
         $result = $s3->putObject([
