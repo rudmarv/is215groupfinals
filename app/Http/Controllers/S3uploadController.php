@@ -23,21 +23,42 @@ class S3uploadController extends Controller
 
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+
+        $file = $request->file('image');
+    
+        $s3 = new S3Client([
+            'version' => 'latest',
+            'region'  => 'us-east-1',
+        ]);
+
+        $result = $s3->putObject([
+            'Bucket' => env('AWS_BUCKET'),
+            'Key'    => 'images/' . $file->getClientOriginalName(),
+            'Body'   => fopen($file, 'r'),
+            'ACL'    => 'public-read',
+        ]);
+
+        // Get the URL of the uploaded image
+        $url = $result['ObjectURL'];
+        echo $url;
+
+    }
+    // public function store(Request $request)
+    // {
     // $s3Client = new S3Client([
     //     'region' => 'us-east-1',
     //     'version' => '2006-03-01'
     // ]);
         
     
-    if ($request->hasFile('file')) {
-    $file = $request->file('file');
-    $fileName = time() . $file->getClientOriginalName();
-    echo $file;
+    // if ($request->hasFile('file')) {
+    // $file = $request->file('file');
+    // $fileName = time() . $file->getClientOriginalName();
+    // echo $file;
     
-    echo "<br>"
-    echo $fileName;
+    // echo "<br>"
+    // echo $fileName;
     // try {
     //     $s3Client->putObject([
     //         'Bucket' => 'is215finals',
@@ -49,13 +70,13 @@ class S3uploadController extends Controller
     //     echo "Failed to upload $fileName with error: " . $exception->getMessage();
     //     exit("Please fix error with file upload before continuing.");
     // }
-    echo "loob";
-    }
-    else {
-    echo "dulo";
-    }
+    // echo "loob";
+    // }
+    // else {
+    // echo "dulo";
+    // }
  
 
 
-    }
+    // }
 }
