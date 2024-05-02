@@ -21,8 +21,8 @@ class GetArticleController extends Controller
                 return response()->json(['message' => $content]);
             }
 
-            if ($attempts < 10) {
-                sleep(5); // 5-second delay
+            if ($attempts < 25) {
+                sleep(2); // 5-second delay
                 return $checkUrl(); // Recursive call
             }
 
