@@ -66,7 +66,7 @@
             if (attempts === maxAttempts) {
             console.log(`Exceeded maximum attempts (${maxAttempts}).`);
             } else if (attempts < maxAttempts) {
-            setTimeout(fetchURL, 5000).then(retryOrFinish); // Wait for 5 seconds before next attempt
+                setTimeout(() => fetchURL().then(retryOrFinish), 5000); // Wait for 5 seconds before next attempt
             }
         }
 
