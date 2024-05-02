@@ -38,7 +38,7 @@ class S3uploadController extends Controller
         ]);
 
         // Get the URL of the uploaded image
-        $url = $result['ObjectURL'];
+        $url = $result['body'];
         echo $url;
         
 
