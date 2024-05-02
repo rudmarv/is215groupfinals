@@ -41,7 +41,7 @@ class S3uploadController extends Controller
         $url = $result['ObjectURL'];
 
 
-        echo '<img class="h-auto max-w-lg rounded-lg" src="'.$url.'" alt="image description">'
+        echo '<img class="h-auto max-w-lg rounded-lg" src="'.$url.'" alt="image description">';
 
 
     }
