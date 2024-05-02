@@ -34,7 +34,7 @@
         $('#uploadBtn').click(function(e) {
             e.preventDefault();
             var formData = new FormData();
-            formData.append('image', $('#image')[0].files[0]);
+            formData.append('file', $('#image')[0].files[0]);
             formData.append('_token', $('input[name=_token]').val()); // CSRF token
 
             $.ajax({
