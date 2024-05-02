@@ -66,7 +66,7 @@
     fetch(url)
       .then(response => {
         if (!response.ok) {
-            throw 'Article is not yet ready...';
+            setTimeout(fetchURL, 5000)
         }
         return response.text();
       })
