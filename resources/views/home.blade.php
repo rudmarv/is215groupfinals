@@ -44,7 +44,7 @@
                 contentType: false,
                 processData: false,
                 success: function(response) {
-                    $('#result').html('<img class="h-auto max-w-lg rounded-lg" src="https://is215finals.s3.amazonaws.com/'+$response+'" alt="image description">');
+                    $('#result').html('<img class="h-auto max-w-lg rounded-lg" src="https://is215finals.s3.amazonaws.com/'+response+'" alt="image description">');
                     // checkLink()
                 },
                 error: function(xhr, status, error) {
