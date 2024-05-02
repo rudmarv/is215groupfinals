@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class GetArticleController extends Controller
 {
-    public function getArticle($awsurl)
+    public function getArticle($Request $request)
     {
+        $awsurl = $request->input('awsurl');
         $client = new Client();
         $attempts = 0;
 

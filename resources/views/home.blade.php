@@ -63,7 +63,7 @@
             $.ajax({
                 url: '/get-article',
                 type: 'GET',
-                data: awsurl,
+                data: {url: awsurl},
                 success: function(response) {
                     $('#article-box').html(response.message);
                 },
