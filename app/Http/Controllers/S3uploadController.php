@@ -40,6 +40,7 @@ class S3uploadController extends Controller
         // Get the URL of the uploaded image
         $url = $result['ObjectURL'];
         echo $url;
+        
 
     }
     // public function store(Request $request)
