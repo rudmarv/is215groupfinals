@@ -9,17 +9,17 @@ use Aws\S3\S3Client;
 class S3uploadController extends Controller
 {
     public function index(){
-        // $s3Client = new S3Client([
-        //     'region' => 'us-east-1',
-        //     'version' => '2006-03-01'
-        // ]);
+        $s3Client = new S3Client([
+            'region' => 'us-east-1',
+            'version' => '2006-03-01'
+        ]);
 
         //Listing all S3 Bucket
-        // $buckets = $s3Client->listBuckets();
-        // foreach ($buckets['Buckets'] as $bucket) {
-        //     echo $bucket['Name'] . "\n";
-        // }
-        // return view('upload');
+        $buckets = $s3Client->listBuckets();
+        foreach ($buckets['Buckets'] as $bucket) {
+            echo $bucket['Name'] . "\n";
+        }
+        // return view('s3upload');
 
     }
 
