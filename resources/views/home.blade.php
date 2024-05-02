@@ -66,7 +66,7 @@
     fetch(url)
       .then(response => {
         if (!response.ok) {
-            console.log(`Generating Article...`);
+            throw new Error('Article is not yet ready...');
         }
         return response.text();
       })
