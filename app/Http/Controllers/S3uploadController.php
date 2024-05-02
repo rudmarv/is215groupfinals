@@ -39,7 +39,7 @@ class S3uploadController extends Controller
 
         // Get the URL of the uploaded image
         $resurls = $result['body'];
-        echo $resurls;
+        // echo $resurls;
 
         $original_url = $resurls;
 
@@ -50,7 +50,7 @@ class S3uploadController extends Controller
         $new_filename = $filename . "-article.txt";
         $new_url = $url_parts['scheme'] . "://" . $url_parts['host'] . "/articles/" . $filename . "." . $path_info['extension'] . "-article.txt";
 
-        echo "Original URL: " . $original_url . "<br>";
+        // echo "Original URL: " . $original_url . "<br>";
         echo "New URL: " . $new_url;
         
 
