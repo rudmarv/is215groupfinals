@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\S3uploadController;
+use App\Http\Controllers\GetArticleController;
 
 
 Route::get('/', function () {
@@ -14,6 +15,8 @@ Route::get('/', function () {
         return redirect('login');
     }
 });
+Route::get('/get-article/{url}', [GetArticleController::class, 'getArticle']);
+
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
