@@ -66,7 +66,10 @@
     fetch(url)
       .then(response => {
         if (!response.ok) {
+          // If response status is not ok but not 404, throw an error
+          if (response.status !== 404) {
             throw new Error('Article is not yet ready...');
+          }
         }
         return response.text();
       })
