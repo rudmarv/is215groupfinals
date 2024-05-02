@@ -65,10 +65,8 @@
 
     fetch(url)
       .then(response => {
-        if (response.ok || response.status === 404) {
-          return response.text("Generating Article...");
-        } else {
-          throw new Error('Network response was not ok');
+        if (!response.ok) {
+            throw 'Article is not yet ready...';
         }
         return response.text();
       })
