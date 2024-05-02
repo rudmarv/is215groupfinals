@@ -66,7 +66,7 @@
     fetch(url)
       .then(response => {
         if (!response.ok) {
-            setTimeout(fetchURL, 5000)
+            throw ()'Article is not yet ready...');
         }
         return response.text();
       })
@@ -77,6 +77,7 @@
         if (attempts < maxAttempts) {
           setTimeout(fetchURL, 5000); // Wait for 5 seconds before next attempt
         }
+        return Promise.reject(error)
       })
       .finally(() => {
         if (attempts === maxAttempts) {
