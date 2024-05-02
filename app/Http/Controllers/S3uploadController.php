@@ -19,7 +19,7 @@ class S3uploadController extends Controller
         foreach ($buckets['Buckets'] as $bucket) {
             echo $bucket['Name'] . "\n";
         }
-        // return view('s3upload');
+        return view('s3upload');
 
     }
 
@@ -34,7 +34,7 @@ class S3uploadController extends Controller
             'Bucket' => 'is215finals',
             'Key'    => 'images/' . $file->getClientOriginalName(),
             'Body'   => fopen($file, 'r'),
-            'ACL'    => 'public-read',
+            //'ACL'    => 'public-read',
         ]);
 
         // Get the URL of the uploaded image
