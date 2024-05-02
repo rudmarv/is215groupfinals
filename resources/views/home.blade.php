@@ -73,6 +73,7 @@
         })
         .catch(error => {
             console.error(`Error: ${error.message}`);
+            throw error;
         })
         .finally(() => {
             if (attempts < maxAttempts) {
