@@ -38,29 +38,11 @@ class S3uploadController extends Controller
         ]);
 
         // Get the URL of the uploaded image
-        $resurls = $result['body'];
+        $url = $result['body'];
         // echo $resurls;
 
-// Original URL
-$original_url = $resurls;
-
-// Define the base URL
-$base_url = "https://is215finals.s3.amazonaws.com/";
-
-// Define the folder name
-$folder_name = "articles/";
-
-// Extract the filename from the URL
-$filename = basename($original_url);
-
-// Append "-article.txt" to the filename
-$new_filename = pathinfo($filename, PATHINFO_FILENAME) . "-article.txt";
-
-// Concatenate the parts to create the new URL
-$new_url = $base_url . $folder_name . $filename . "-" . $new_filename;
-
 // Output the new URL
-echo '<img class="h-auto max-w-lg rounded-lg" src="'. $resurls . '" alt="image description">';
+echo $url ;
         
 
     }
