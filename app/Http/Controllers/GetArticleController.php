@@ -17,7 +17,8 @@ class GetArticleController extends Controller
             $response = $client->get($awsurl, ['http_errors' => false]);
 
             if ($response->getStatusCode() === 200) {
-                return response()->json(['message' => 'available']);
+                $content = $response->getBody()->getContents();
+                return response()->json(['message' => $content]);
             }
 
             if ($attempts < 10) {
