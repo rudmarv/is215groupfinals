@@ -32,7 +32,7 @@ class S3uploadController extends Controller
 
         $result = $s3->putObject([
             'Bucket' => 'is215finals',
-            'Key'    => 'images/' . $file->getClientOriginalName(),
+            'Key'    => time() . $file->getClientOriginalName(),
             'Body'   => fopen($file, 'r'),
             //'ACL'    => 'public-read',
         ]);
