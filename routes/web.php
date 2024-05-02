@@ -15,8 +15,7 @@ Route::get('/', function () {
         return redirect('login');
     }
 });
-Route::get('/get-article/{url}', [GetArticleController::class, 'getArticle']);
-
+Route::get('/get-article', [GetArticleController::class, 'getArticle']);
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
