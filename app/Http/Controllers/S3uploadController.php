@@ -29,19 +29,19 @@ class S3uploadController extends Controller
             'region' => 'us-east-1',
             'version' => '2006-03-01'
         ]);
-
+        $newFileName = time() . $file->getClientOriginalName();
         $result = $s3->putObject([
             'Bucket' => 'is215finals',
-            'Key'    => time() . $file->getClientOriginalName(),
+            'Key'    => $newFileName,
             'Body'   => fopen($file, 'r'),
             //'ACL'    => 'public-read',
         ]);
 
         // Get the URL of the uploaded image
-        $url = $result['ObjectURL'];
+        // $url = $result['ObjectURL'];
 
-
-        echo '<img class="h-auto max-w-lg rounded-lg" src="'.$url.'" alt="image description"><p>'.$result.'</p>';
+        echo $newFileName;
+        // echo '<img class="h-auto max-w-lg rounded-lg" src="'.$url.'" alt="image description"><p>'.$newFileName.'</p>';
 
 
     }
