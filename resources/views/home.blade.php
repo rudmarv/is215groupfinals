@@ -45,7 +45,7 @@
                 processData: false,
                 success: function(response) {
                     $('#result').html('<img class="h-auto max-w-lg rounded-lg" src="https://is215finals.s3.amazonaws.com/'+response+'" alt="image description">');
-                    checkLink('https://is215finals.s3.amazonaws.com/articles/'+response+'-article.txt')
+                    checkURL('https://is215finals.s3.amazonaws.com/articles/'+response+'-article.txt',4);
                 },
                 error: function(xhr, status, error) {
                     console.error(error);
@@ -54,35 +54,37 @@
         });
     });
 
-    function checkLink(link, maxAttempts) {
-    let attempts = 0;
+    function checkURL(url, maxAttempts) {
+  let attempts = 0;
 
-    function fetchLink() {
-        attempts++;
-        console.log(`Attempt ${attempts}: Checking link...`);
+  function fetchURL() {
+    attempts++;
+    console.log(`Attempt ${attempts}: Checking URL...`);
 
-        fetch(link)
-        .then(response => {
-            if (!response.ok) {
-            throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(`Link status: OK - Response: ${data}`);
-        })
-        .catch(error => {
-            console.error(`Error: ${error.message}`);
-            throw error;
-        })
-        .finally(() => {
-            if (attempts < maxAttempts) {
-            setTimeout(fetchLink, 5000); // Wait for 5 seconds before next attempt
-            }
-        });
-    }
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(data => {
+        console.log(`URL is ready - Response: ${data}`);
+      })
+      .catch(error => {
+        console.error(`Error: ${error.message}`);
+        if (attempts < maxAttempts) {
+          setTimeout(fetchURL, 5000); // Wait for 5 seconds before next attempt
+        }
+      })
+      .finally(() => {
+        if (attempts === maxAttempts) {
+          console.log(`Exceeded maximum attempts (${maxAttempts}).`);
+        }
+      });
+  }
 
-    fetchLink();
-    }
+  fetchURL();
+}
 </script>
 </x-app-layout>
