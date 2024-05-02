@@ -38,20 +38,20 @@ class S3uploadController extends Controller
         ]);
 
         // Get the URL of the uploaded image
-        $resurls = $result;
+        $resurls = $result['body'];
         echo $resurls;
 
-        // $original_url = $url;
+        $original_url = $resurls;
 
-        // // Parse the URL
-        // $url_parts = parse_url($original_url);
-        // $path_info = pathinfo($url_parts['path']);
-        // $filename = $path_info['filename'];
-        // $new_filename = $filename . "-article.txt";
-        // $new_url = $url_parts['scheme'] . "://" . $url_parts['host'] . "/articles/" . $filename . "." . $path_info['extension'] . "-article.txt";
+        // Parse the URL
+        $url_parts = parse_url($original_url);
+        $path_info = pathinfo($url_parts['path']);
+        $filename = $path_info['filename'];
+        $new_filename = $filename . "-article.txt";
+        $new_url = $url_parts['scheme'] . "://" . $url_parts['host'] . "/articles/" . $filename . "." . $path_info['extension'] . "-article.txt";
 
-        // echo "Original URL: " . $original_url . "<br>";
-        // echo "New URL: " . $new_url;
+        echo "Original URL: " . $original_url . "<br>";
+        echo "New URL: " . $new_url;
         
 
     }
