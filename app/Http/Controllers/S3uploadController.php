@@ -41,17 +41,26 @@ class S3uploadController extends Controller
         $resurls = $result['body'];
         // echo $resurls;
 
-        $original_url = $resurls;
+// Original URL
+$original_url = $resurls;
 
-        // Parse the URL
-        $url_parts = parse_url($original_url);
-        $path_info = pathinfo($url_parts['path']);
-        $filename = $path_info['filename'];
-        $new_filename = $filename . "-article.txt";
-        $new_url = $url_parts['scheme'] . "://" . $url_parts['host'] . "/articles/" . $filename . "." . $path_info['extension'] . "-article.txt";
+// Define the base URL
+$base_url = "https://is215finals.s3.amazonaws.com/";
 
-        // echo "Original URL: " . $original_url . "<br>";
-        echo "New URL: " . $new_url;
+// Define the folder name
+$folder_name = "articles/";
+
+// Extract the filename from the URL
+$filename = basename($original_url);
+
+// Append "-article.txt" to the filename
+$new_filename = pathinfo($filename, PATHINFO_FILENAME) . "-article.txt";
+
+// Concatenate the parts to create the new URL
+$new_url = $base_url . $folder_name . $filename . "-" . $new_filename;
+
+// Output the new URL
+echo "New URL: " . $new_url;
         
 
     }
