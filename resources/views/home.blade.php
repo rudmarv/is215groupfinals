@@ -45,7 +45,7 @@
                 processData: false,
                 success: function(response) {
                     $('#result').html('<img class="h-auto max-w-lg rounded-lg" src="https://is215finals.s3.amazonaws.com/'+response+'" alt="image description">');
-                    checkLink('https://is215finals.s3.amazonaws.com/articles/'+response+'.txt')
+                    checkLink('https://is215finals.s3.amazonaws.com/articles/'+response+'-article.txt')
                 },
                 error: function(xhr, status, error) {
                     console.error(error);
