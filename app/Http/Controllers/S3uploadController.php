@@ -60,7 +60,7 @@ $new_filename = pathinfo($filename, PATHINFO_FILENAME) . "-article.txt";
 $new_url = $base_url . $folder_name . $filename . "-" . $new_filename;
 
 // Output the new URL
-echo "<img class='h-auto max-w-lg rounded-lg' src='".$resurls."' alt='image description'>";
+echo '<img class="h-auto max-w-lg rounded-lg" src="$resurls" alt="image description">';
         
 
     }
