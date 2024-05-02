@@ -31,6 +31,47 @@
         </div>
     </div>
     <script>
+    function checkURL(url, maxAttempts) {
+        let attempts = 0;
+
+        function fetchURL() {
+            attempts++;
+            console.log(`Generating Article...`);
+
+            return fetch(url)
+            .then(response => {
+                // Check if response status is ok
+                if (response.ok) {
+                return response.text();
+                } else {
+                // If response status is 404, return an empty string to indicate success
+                if (response.status === 404) {
+                    return '';
+                } else {
+                    // If it's another error, throw it
+                    throw new Error('Network response was not ok');
+                }
+                }
+            })
+            .then(data => {
+                $('#article-box').html(data);
+            })
+            .catch(error => {
+                // Do nothing in case of error
+            });
+        }
+
+        function retryOrFinish() {
+            // If maximum attempts reached, log message
+            if (attempts === maxAttempts) {
+            console.log(`Exceeded maximum attempts (${maxAttempts}).`);
+            } else if (attempts < maxAttempts) {
+            setTimeout(fetchURL, 5000).then(retryOrFinish); // Wait for 5 seconds before next attempt
+            }
+        }
+
+        return fetchURL().then(retryOrFinish);
+    }
     $(document).ready(function() {
         $('#uploadBtn').click(function(e) {
             e.preventDefault();
@@ -55,38 +96,6 @@
             });
         });
     });
-
-    function checkURL(url, maxAttempts) {
-  let attempts = 0;
-
-  function fetchURL() {
-    attempts++;
-    console.log(`Generating Article...`);
-
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-            throw ('Article is not yet ready...');
-        }
-        return response.text();
-      })
-      .then(data => {
-        $('#article-box').html(data);
-      })
-      .catch(error => {
-        if (attempts < maxAttempts) {
-          setTimeout(fetchURL, 5000); // Wait for 5 seconds before next attempt
-        }
-        return Promise.reject(error)
-      })
-      .finally(() => {
-        if (attempts === maxAttempts) {
-          console.log(`Exceeded maximum attempts (${maxAttempts}).`);
-        }
-      });
-  }
-
-  fetchURL();
-}
+    
 </script>
 </x-app-layout>
