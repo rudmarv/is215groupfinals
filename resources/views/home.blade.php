@@ -64,8 +64,8 @@
                 type: 'GET',
                 data: {url: awsurl},
                 success: function(response) {
-                    $('#article-title').html(response.message->title);
-                    $('#article-content').html(response.message->article);
+                    $('#article-title').html(response.message.title);
+                    $('#article-content').html(response.message.article);
                 },
                 error: function(xhr, status, error) {
                     $('#article-box').html("Unable to generate Article. Try to upload again.");
