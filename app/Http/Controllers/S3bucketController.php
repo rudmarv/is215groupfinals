@@ -51,11 +51,14 @@ class S3bucketController extends Controller
             ]);
 
             // Extract filenames from the object list excluding directories
+            if($object){
             $files = array_filter(array_map(function ($object) {
                 return strpos($object['Key'], '/') === false ? $object['Key'] : null;
             }, $objects['Contents']));
-
             return view('articles', ['files' => $files]);
+            }
+            return view('articles');
+            
         } catch (AwsException $e) {
             // Handle exceptions
             echo "error";
