@@ -56,6 +56,7 @@ class S3bucketController extends Controller
             }, $objects['Contents']));
             
             return view('articles', ['files' => $files]);
+
         } catch (AwsException $e) {
             // Handle exceptions
             echo "error";

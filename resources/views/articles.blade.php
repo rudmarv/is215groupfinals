@@ -11,6 +11,20 @@
             <ul>
                 @foreach ($files as $file)
                     <li>{{ $file }}</li>
+
+                @php
+                    $url = 'https://is215finals.s3.amazonaws.com/articles/'.$file.'-article.json';
+                    $jsonData = file_get_contents($url);
+                    $data = json_decode($jsonData, true);
+                @endphp
+
+                @if ($data !== null)
+                    <h1>{{ $data['title'] }}</h1>
+                    <p>{{ $data['article'] }}</p>
+                @else
+                    <p>Failed to decode JSON.</p>
+                @endif
+
                 @endforeach
             </ul>
             </div>
