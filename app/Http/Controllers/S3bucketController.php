@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Aws\S3\S3Client;
 
 class S3bucketController extends Controller
 {
