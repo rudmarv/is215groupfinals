@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\S3uploadController;
-use App\Http\Controllers\GetArticleController;
+use App\Http\Controllers\S3bucketController;
 
 
 Route::get('/', function () {
@@ -15,7 +15,8 @@ Route::get('/', function () {
         return redirect('login');
     }
 });
-Route::get('/get-article', [GetArticleController::class, 'getArticle']);
+Route::get('/get-article', [S3bucketController::class, 'getArticle']);
+Route::get('/articles', [S3bucketController::class, 'listArticles'])->name("articles");
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
