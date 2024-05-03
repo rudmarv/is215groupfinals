@@ -5,8 +5,9 @@
         </h2>
     </x-slot>
     <div class="py-12">
-        <div class="flex flex-wrap max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white shadow-sm sm:rounded-lg">
+        <div class="flex flex-wrap max-w-7xl mx-auto sm:px-6 lg:px-8">
             @foreach ($files as $file)
+            <div class="bg-white shadow-sm sm:rounded-lg my-6">
                 <div class="w-4/12 overflow-hidden">
                     <img class="w-full max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/{{ $file }}" alt="image description">
                 </div>
@@ -26,24 +27,23 @@
                 @else
                     <p></p>
                 @endif
+            </div>
             @endforeach
         </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-    // Function to reload Tailwind CSS
-    function reloadTailwindCSS() {
-        var links = document.querySelectorAll('link[rel="stylesheet"]');
-        links.forEach(function(link) {
-            if (link.href.includes("tailwind.css")) {
-                var href = link.href.split('?')[0];
-                link.href = href + '?rand=' + Math.random();
+            // Function to reload CSS
+            function reloadCSS() {
+                var links = document.querySelectorAll('link[rel="stylesheet"]');
+                links.forEach(function(link) {
+                    var href = link.href.split('?')[0];
+                    link.href = href + '?rand=' + Math.random();
+                });
             }
-        });
-    }
 
-    // Call reloadTailwindCSS function
-    reloadTailwindCSS();
-});
+            // Call reloadCSS function
+            reloadCSS();
+        });
         </script>
 </x-app-layout>
