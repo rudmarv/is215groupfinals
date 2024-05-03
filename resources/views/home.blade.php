@@ -64,8 +64,9 @@
                 type: 'GET',
                 data: {url: awsurl},
                 success: function(response) {
-                    console.log(response.message);
-                    console.log(response.message.article);
+                    const jsonData = JSON.parse(response.message);
+                    console.log(jsonData.article);
+                    console.log(jsonData.title);
                     $('#article-title').html(response.message.article);
                     // $('#article-content').html(response.message.article);
                 },
