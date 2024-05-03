@@ -64,6 +64,8 @@
                 type: 'GET',
                 data: {url: awsurl},
                 success: function(response) {
+                    console.log(response.message);
+                    console.log(response.message.article);
                     $('#article-title').html(response.message.article);
                     // $('#article-content').html(response.message.article);
                 },
