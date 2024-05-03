@@ -31,17 +31,19 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Function to reload CSS
-            function reloadCSS() {
-                var links = document.querySelectorAll('link[rel="stylesheet"]');
-                links.forEach(function(link) {
-                    var href = link.href.split('?')[0];
-                    link.href = href + '?rand=' + Math.random();
-                });
+    // Function to reload Tailwind CSS
+    function reloadTailwindCSS() {
+        var links = document.querySelectorAll('link[rel="stylesheet"]');
+        links.forEach(function(link) {
+            if (link.href.includes("tailwind.css")) {
+                var href = link.href.split('?')[0];
+                link.href = href + '?rand=' + Math.random();
             }
-
-            // Call reloadCSS function
-            reloadCSS();
         });
+    }
+
+    // Call reloadTailwindCSS function
+    reloadTailwindCSS();
+});
         </script>
 </x-app-layout>
