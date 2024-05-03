@@ -46,7 +46,7 @@ class S3bucketController extends Controller
 
         try {
             // List all objects in the bucket
-            $objects = $s3->listObjectsV2([
+            $objects = $s3Client->listObjectsV2([
                 'Bucket' => $bucketName,
             ]);
 
