@@ -65,13 +65,11 @@
                 data: {url: awsurl},
                 success: function(response) {
                     const jsonData = JSON.parse(response.message);
-                    console.log(jsonData.article);
-                    console.log(jsonData.title);
-                    $('#article-title').html(response.message.article);
-                    // $('#article-content').html(response.message.article);
+                    $('#article-title').html(jsonData.title);
+                    $('#article-content').html(jsonData.article);
                 },
                 error: function(xhr, status, error) {
-                    $('#article-box').html("Unable to generate Article. Try to upload again.");
+                    $('#article-title').html("Unable to generate Article. Try to upload again.");
                 }
             });
         });
