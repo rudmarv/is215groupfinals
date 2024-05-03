@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
     <div class="py-12">
-        <div class="flex max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white shadow-sm sm:rounded-lg">
+        <div class="flex w-full mx-auto sm:px-6 lg:px-8 bg-white shadow-sm sm:rounded-lg">
             <h1>List of Articles</h1>
-            
+            <div class="flex">
                 @foreach ($files as $file)
                 <div class="w-1/3"><img class="h-auto max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/{{ $file }}" alt="image description"></div>
                 @php
@@ -26,6 +26,7 @@
                 @endif
 
                 @endforeach
+                </div>
         </div>
     </div>
 </x-app-layout>
