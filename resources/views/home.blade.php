@@ -11,7 +11,7 @@
                 <form id="upload-form" enctype="multipart/form-data">
                     @csrf
                     <p class="tracking-tighter text-gray-500 md:text-lg pb-6">This form enables you to upload an image file for AI image recognition using Amazon Rekognition for detailed visual analysis. It will also generate an article on the supplied image using ChatGPT's article producing feature.</p>
-                <input id="image" name="file" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" required id="multiple_files" type="file">
+                <input id="image" name="file" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" accept="image/png, image/jpeg, image/jpg" required type="file">
                 
 
                 <button id="uploadBtn" type="submit" class="text-white bg-blue-700 mt-2 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">Upload and Generate Content</button>
