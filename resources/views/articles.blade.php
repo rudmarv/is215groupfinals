@@ -6,8 +6,6 @@
     </x-slot>
     <div class="py-12">
         <div class="flex flex-wrap max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white shadow-sm sm:rounded-lg">
-            <h1>List of Articles</h1>
-            
                 @foreach ($files as $file)
                 <div class=" w-1/3 overflow-hidden "><img class="w-auto max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/{{ $file }}" alt="image description"></div>
                 @php
