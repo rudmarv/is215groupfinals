@@ -24,7 +24,8 @@
                 <div class="p-6 text-gray-900">
                     <p class="tracking-tighter text-gray-500 md:text-lg pb-6">Result:</p>
                     <div id="result"></div>
-                    <div id="article-box"></div>
+                    <div id="article-title"></div>
+                    <div id="article-content"></div>
                 </div>
             </div>
         </div>
@@ -46,7 +47,7 @@
                 processData: false,
                 success: function(response) {
                     $('#result').html('<img class="h-auto max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/'+response+'" alt="image description">');
-                    $('#article-box').html('<div class="timeline-wrapper"><div class="animated-background text-gray-600 h-7 w-1/2 px-1 rounded-md mb-2">Generating article using ChatGPT</div><div class="animated-background h-3 w-3/4 rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-1/2 rounded-sm mb-6"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-3/4 rounded-sm mb-6"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-1/2 rounded-sm mb-2"></div></div>');
+                    $('#article-title').html('<div class="timeline-wrapper"><div class="animated-background text-gray-600 h-7 w-1/2 px-1 rounded-md mb-2">Generating article using ChatGPT</div><div class="animated-background h-3 w-3/4 rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-1/2 rounded-sm mb-6"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-3/4 rounded-sm mb-6"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-1/2 rounded-sm mb-2"></div></div>');
                     checkArticle('https://is215finals.s3.amazonaws.com/articles/'+response+'-article.json');
                 },
                 error: function(xhr, status, error) {
@@ -63,7 +64,8 @@
                 type: 'GET',
                 data: {url: awsurl},
                 success: function(response) {
-                    $('#article-box').html(response.message);
+                    $('#article-title').html(response.message->title);
+                    $('#article-content').html(response.message->article);
                 },
                 error: function(xhr, status, error) {
                     $('#article-box').html("Unable to generate Article. Try to upload again.");
