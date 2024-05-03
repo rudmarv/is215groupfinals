@@ -9,13 +9,9 @@
             <div class=" w-1/2 overflow-hidden ">
             <h1>List of Files</h1>
             <ul>
-                @if({{$files}})
-                    @foreach ($files as $file)
-                        <li>{{ $file }}</li>
-                    @endforeach
-                @else
-                    No Articles
-                @endif
+                @foreach ($files as $file)
+                    <li>{{ $file }}</li>
+                @endforeach
             </ul>
             </div>
         </div>
