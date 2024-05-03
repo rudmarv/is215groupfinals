@@ -65,8 +65,8 @@
                 data: {url: awsurl},
                 success: function(response) {
                     const jsonData = JSON.parse(response.message);
-                    $('#article-title').html('<h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">'.jsonData.title.'</h>');
-                    $('#article-content').html('<p class="text-gray-500 ">'.jsonData.article.'</p>');
+                    $('#article-title').html('<h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">'+jsonData.title+'</h>');
+                    $('#article-content').html('<p class="text-gray-500 ">'+jsonData.article+'</p>');
                 },
                 error: function(xhr, status, error) {
                     $('#article-title').html("Unable to generate Article. Try to upload again.");
