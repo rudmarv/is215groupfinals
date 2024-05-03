@@ -6,7 +6,7 @@
     </x-slot>
     <div class="py-12">
         <div class="flex max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white shadow-sm sm:rounded-lg">
-            <div class=" w-full overflow-hidden ">
+            <div class="flex w-full overflow-hidden ">
             <h1>List of Articles</h1>
             
                 @foreach ($files as $file)
