@@ -9,7 +9,7 @@
             <h1>List of Articles</h1>
             
                 @foreach ($files as $file)
-                <div class=" w-1/3 overflow-hidden "><img class="h-auto max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/{{ $file }}" alt="image description"></div>
+                <div class=" w-1/3 overflow-hidden "><img class="w-auto max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/{{ $file }}" alt="image description"></div>
                 @php
                     $url = 'https://is215finals.s3.amazonaws.com/articles/'.$file.'-article.json';
                     $jsonData = file_get_contents($url);
@@ -19,6 +19,8 @@
                 @if ($data !== null)
                 <div class=" w-2/3 overflow-hidden ">
                     <h2 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">{{ $data['title'] }}</h1>
+                </div>
+                <div class=" w-full overflow-hidden ">
                     <p class="text-gray-500 ">{{ $data['article'] }}</p>
                 </div>
                 @else
