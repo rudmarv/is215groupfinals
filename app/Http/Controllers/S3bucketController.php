@@ -48,7 +48,6 @@ class S3bucketController extends Controller
             // List all objects in the bucket
             $objects = $s3Client->listObjectsV2([
                 'Bucket' => $bucketName,
-                'Sort' => 'Ascending'
             ]);
 
             // Extract filenames from the object list excluding directories
