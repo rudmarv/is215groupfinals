@@ -6,7 +6,7 @@
     </x-slot>
     <div class="py-12">
         <div class="flex flex-wrap max-w-7xl mx-auto sm:px-6 lg:px-8">
-        @if($files)    
+        @if($files !== false)
             @php
                 $filesReversed = array_reverse($files);
             @endphp
@@ -33,6 +33,8 @@
                 @endif
             </div>
             @endforeach
+        @else
+        <h2 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">No Files Available</h2>
         @endif
         </div>
     </div>
