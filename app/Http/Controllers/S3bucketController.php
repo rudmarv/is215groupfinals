@@ -50,7 +50,8 @@ class S3bucketController extends Controller
                 'Bucket' => $bucketName,
             ]);
             if (empty($objects['Contents'])) {
-                return view('articles', $files = false);
+                $files = false;
+                return view('articles', $files);
             } 
             // Extract filenames from the object list excluding directories
             $files = array_filter(array_map(function ($object) {
