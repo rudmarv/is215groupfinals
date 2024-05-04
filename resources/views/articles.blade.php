@@ -6,7 +6,16 @@
     </x-slot>
     <div class="py-12">
         <div class="flex flex-wrap max-w-7xl mx-auto sm:px-6 lg:px-8">
-            
+        @foreach ($files as $file)
+        <p>$file</p>
+        @endforeach
+        
+        @php
+            $filesReversed = array_reverse($files);
+        @endphp
+        @foreach ($filesReversed as $file)
+        <p>$file</p>
+        @endforeach
             @foreach ($files as $file)
             <div class="bg-white shadow-sm sm:rounded-lg my-6 p-6">
                 <div class="w-full overflow-hidden">
