@@ -54,7 +54,7 @@ class S3bucketController extends Controller
             $files = array_filter(array_map(function ($object) {
                 return strpos($object['Key'], '/') === false ? $object['Key'] : null;
             }, $objects['Contents']));
-            
+            array_reverse($files);
             return view('articles', ['files' => $files]);
 
         } catch (AwsException $e) {
