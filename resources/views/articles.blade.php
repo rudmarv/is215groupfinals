@@ -26,7 +26,7 @@
                         <h2 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">{{ $data['title'] }}</h2>
                     </div>
                     <div class="w-full overflow-hidden">
-                        <p class="text-gray-500">{{ $data['article'] }}</p>
+                        <p class="text-gray-500 text-justify">{{ $data['article'] }}</p>
                     </div>
                 @else
                     <p></p>
