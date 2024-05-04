@@ -49,12 +49,11 @@ class S3bucketController extends Controller
             $objects = $s3Client->listObjectsV2([
                 'Bucket' => $bucketName,
             ]);
-            dd($objects);
-            // $objectCount = count($objects['Contents']);
-            // if($objectCount==0) {
-            //     $files = false;
-            //     return view('home');
-            // } 
+            $objectCount = count($objects['Contents']);
+            if($objectCount==0) {
+                $files = false;
+                return view('home');
+            } 
             // Extract filenames from the object list excluding directories
             // $files = array_filter(array_map(function ($object) {
             //     return strpos($object['Key'], '/') === false ? $object['Key'] : null;
