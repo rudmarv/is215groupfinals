@@ -48,6 +48,7 @@
                 success: function(response) {
                     $('#result').html('<img class="h-auto max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/'+response+'" alt="image description">');
                     $('#article-title').html('<div class="timeline-wrapper"><div class="animated-background text-gray-600 h-7 w-1/2 px-1 rounded-md mb-2">Generating article using ChatGPT</div><div class="animated-background h-3 w-3/4 rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-1/2 rounded-sm mb-6"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-3/4 rounded-sm mb-6"></div><div class="animated-background h-3 w-full rounded-sm mb-2"></div><div class="animated-background h-3 w-1/2 rounded-sm mb-2"></div></div>');
+                    $('#article-content').html('');
                     checkArticle('https://is215finals.s3.amazonaws.com/articles/'+response+'-article.json');
                 },
                 error: function(xhr, status, error) {
