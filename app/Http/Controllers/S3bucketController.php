@@ -49,7 +49,8 @@ class S3bucketController extends Controller
             $objects = $s3Client->listObjectsV2([
                 'Bucket' => $bucketName,
             ]);
-            if (empty($objects)) {
+            $objectCount = count($objects['Contents'])
+            if($objectCount==0) {
                 $files = false;
                 return view('home');
             } 
