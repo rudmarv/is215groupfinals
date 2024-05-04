@@ -6,7 +6,7 @@
     </x-slot>
     <div class="py-12">
         <div class="flex flex-wrap max-w-7xl mx-auto sm:px-6 lg:px-8">
-        @if($files)    
+        @if(!empty($files))    
             @php
                 $filesReversed = array_reverse($files);
             @endphp
