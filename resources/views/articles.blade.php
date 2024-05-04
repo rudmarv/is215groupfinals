@@ -16,7 +16,7 @@
                     <img class="w-auto max-w-lg rounded-lg mb-6" src="https://is215finals.s3.amazonaws.com/{{ $file }}" alt="image description">
                 </div>
                 @php
-                    $url = 'https://is215finals.s3.amazonaws.com/articles/'.$file.'-article.json';
+                    $url = urlencode('https://is215finals.s3.amazonaws.com/articles/'.$file.'-article.json');
                     $jsonData = file_get_contents($url);
                     $data = json_decode($jsonData, true);
                 @endphp
