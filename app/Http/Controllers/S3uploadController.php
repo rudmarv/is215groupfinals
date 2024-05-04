@@ -29,7 +29,7 @@ class S3uploadController extends Controller
             'region' => 'us-east-1',
             'version' => '2006-03-01'
         ]);
-        $newFileName = time() . $file->getClientOriginalName();
+        $newFileName = urlencode(time() . $file->getClientOriginalName());
         $result = $s3->putObject([
             'Bucket' => 'is215finals',
             'Key'    => $newFileName,
