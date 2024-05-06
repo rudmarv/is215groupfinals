@@ -27,7 +27,7 @@
              
           </div>
           <div class="text-center text-gray-500 dark:text-gray-400 mb-6">
-              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/avatar.jpg" alt="Bonnie Avatar">
+              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/joms.jpg" alt="Bonnie Avatar">
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900  ">
               Jonathan 
               </h3>
