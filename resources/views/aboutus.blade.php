@@ -13,42 +13,42 @@
       </div> 
       <div class="grid gap-2 lg:gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           <div class="text-center text-gray-500 dark:text-gray-400 mb-6">
-              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/avatar.jpg" alt="Bonnie Avatar">
+              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/federex.png" alt="Federex Avatar">
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900  ">
               Federex 
               </h3>
               
           </div>
           <div class="text-center text-gray-500 dark:text-gray-400 mb-6">
-              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/avatar.jpg" alt="Bonnie Avatar">
+              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/felino.png" alt="Felino Avatar">
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900  ">
               Felino 
               </h3>
              
           </div>
           <div class="text-center text-gray-500 dark:text-gray-400 mb-6">
-              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/joms.jpg" alt="Bonnie Avatar">
+              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/joms.jpg" alt="Jonathan Avatar">
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900  ">
               Jonathan 
               </h3>
               
           </div>
           <div class="text-center text-gray-500 dark:text-gray-400 mb-6">
-              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/avatar.jpg" alt="Bonnie Avatar">
+              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/avatar.jpg" alt="Khalid Avatar">
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900  ">
               Khalid 
               </h3>
            
           </div>
           <div class="text-center text-gray-500 dark:text-gray-400 mb-6">
-              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/avatar.jpg" alt="Bonnie Avatar">
+              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/rochelle.jpeg" alt="Rochelle Anne Avatar">
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900  ">
               Rochelle Anne 
               </h3>
            
           </div>
           <div class="text-center text-gray-500 dark:text-gray-400 mb-6">
-              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/rudmar.jpg" alt="Bonnie Avatar">
+              <img class="mx-auto mb-4 w-52 h-52 rounded-full" src="/images/rudmar.jpg" alt="Rudmar Avatar">
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900  ">
               Rudmar 
               </h3>
