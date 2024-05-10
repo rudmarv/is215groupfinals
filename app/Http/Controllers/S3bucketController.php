@@ -22,8 +22,8 @@ class S3bucketController extends Controller
                 return response()->json(['message' => $content]);
             }
 
-            if ($attempts < 60) {
-                sleep(2); // 5-second delay
+            if ($attempts < 30) {
+                sleep(2); // 2-second delay
                 return $checkUrl(); // Recursive call
             }
 

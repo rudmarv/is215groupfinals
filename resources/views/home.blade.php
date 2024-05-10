@@ -70,7 +70,7 @@
                     $('#article-content').html('<p class="text-gray-500 text-justify">'+jsonData.article+'</p>');
                 },
                 error: function(xhr, status, error) {
-                    $('#article-title').html("Unable to generate Article. Try to upload again.");
+                    $('#article-title').html("Unable to generate Article. Try to upload again or try different image.");
                 }
             });
         });
